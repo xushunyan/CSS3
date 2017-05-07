@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .box1{width: 100px; height: 100px;color: #ffffff;
+        background: red;
+            margin: 100px;
+            transition: 2s;
+        }
+        .box1:hover{
+            -webkit-transform:rotate(90deg);
+            -webkit-transform-origin:0 0;}
+
+        .box2{width: 100px; height: 100px;color: #ffffff;
+            background: red; float: left;
+            margin: 100px;
+            transition: 2s;
+        }
+        .box2:hover{
+            -webkit-transform:skewX(45deg);}
+        
+        .box3{width: 100px; height: 100px;color: #ffffff;
+            float: left;
+            background: red;
+            margin: 100px;
+            transition: 2s;
+        }
+        .box3:hover {
+            -webkit-transform:skew(15deg,60deg);}
+
+        .nav{
+            height: 40px;
+            width:288px;
+            -webkit-transform:skewX(35deg);
+            background: lightcyan;
+        }
+        .nav li{
+            width:140px;
+            height: 40px;
+            background: red;
+            float: left;
+            display: block;
+            -webkit-transform:skewX(35deg);
+            text-align: center;
+            margin: 0 2px;
+            -webkit-transition:1s;
+            cursor: pointer;
+        }
+
+        .nav li a{
+            display: block;
+            text-decoration: none;
+            font: bold 20px/40px '微软雅黑';
+            color:#ffffff;
+            -webkit-transform:skewX(-50deg);
+
+        }
+
+
+        .box4{width: 100px; height: 100px;color: #ffffff;
+            float: left;
+            background: red;
+            margin: 100px;
+            transition: 2s;
+        }
+        .box4:hover {
+            -webkit-transform:scale(2);}
+
+        .box5{width: 100px; height: 100px;color: #ffffff;
+            float: left;
+            background: red;
+            margin: 100px;
+            transition: 2s;
+        }
+        body:hover .box5 {
+            -webkit-transform:translate(200px,100px);}
+
+        .box6{width: 100px; height: 100px;color: #ffffff;
+            float: left;
+            background: red;
+            margin: 200px;
+            transition: 2s;
+            -webkit-transform-origin:right bottom;
+        }
+        body:hover .box6 {
+            -webkit-transform:rotate(720deg) scale(0.4);}
+    </style>
+</head>
+<body style="height: 3000px;">
+<ul class="nav">
+    <li><a href="#">倾斜导航</a></li>
+    <li><a href="#">倾斜导航</a></li>
+</ul>
+<div class="box1">旋转</div>
+<div class="box2">倾斜</div>
+<div class="box3">倾斜</div>
+<div class="box4">缩放</div>
+<div class="box5">位移</div>
+<div class="box6">边旋转，变缩小</div>
+</body>
+</html>

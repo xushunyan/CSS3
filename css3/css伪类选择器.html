@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width:200px; height:200px; background:#000000; display: none; }
+        div:target{ display:block;color:white;}
+        input:checked{width:20px; height:20px;}
+        div::selection{color:red;}
+
+        nav{width:200px;height:200px;background:#000000;
+            color:white;}
+        #pp,#pp1{text-indent:24px;background-color:antiquewhite;
+            width:416px;display:block;height:116px;
+        padding:20px;margin:20px;}
+        #pp1:first-line{background:red;color:#ffffff;}
+        #pp1:first-letter{font-size:30px;
+            color:#000;background:antiquewhite;}
+
+        #pp::before{width:0;height:0;display:block;
+           content:'';border-width:10px;border-style:solid;
+        border-color:transparent antiquewhite transparent transparent;
+        position:relative;left:-40px;top:-10px;}
+        #pp::after{width:0;height:0;display:block;
+            content:'';border-width:10px;border-style:solid;
+            border-color:transparent  transparent gray transparent;
+            position:relative;left:400px; top:-5px;}
+        #pp::selection{color:aqua;}
+
+        li:not(.li2){ background: red;}
+    </style>
+</head>
+
+<body>
+    <p id="pp1">
+        前端开发的世界从未有过无声的寂静，<br>
+        精彩纷呈的互联网也不曾出现片刻安宁，<br>
+        在 HTML5&CSS3 被炒至沸沸扬扬的今天，<br>
+        全面系统的掌握此项技能，是加重技术含金量的重要砝码！<br>
+        妙味课堂现已为你开启一个崭新的职业规划……
+    </p>
+    <p id="pp">
+        前端开发的世界从未有过无声的寂静，<br>
+        精彩纷呈的互联网也不曾出现片刻安宁，<br>
+        在 HTML5&CSS3 被炒至沸沸扬扬的今天，<br>
+        全面系统的掌握此项技能，是加重技术含金量的重要砝码！<br>
+        妙味课堂现已为你开启一个崭新的职业规划……
+    </p>
+
+    <ul>
+        <li>1</li>
+        <li class="li2">2</li>
+        <li>3</li>
+    </ul>
+
+    <a href="#div1">模块1</a>
+    <a href="#div2">模块2</a>
+    <a href="#div3">模块3</a>
+
+    <div id="div1">模块1</div>
+    <div id="div2">模块2</div>
+    <div id="div3">模块3</div>
+
+    <input type="checkbox">
+
+
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1{width:200px;height:60px;
+            -webkit-border-image:url(imgs/bt_blue.png) 0 10 stretch;
+            border-left-width:10px;
+            border-right-width:10px;
+        }
+        .box2{width:100px;height:100px;margin: 10px;
+            border-width:20px;
+            -webkit-border-image:url(imgs/border.png) 27 27;
+        }
+        .box3{width:100px;height:100px;margin: 10px;
+            border-width:20px;
+            -webkit-border-image:url(imgs/border.png) 27 27 round round;
+        }
+        .box4{width:100px;height:100px;margin: 10px;
+            border-width:20px;
+            -webkit-border-image:url(imgs/border.png) 27 27 round stretch;
+        }
+        .box5{width:100px;height:100px;margin: 10px;
+            border:10px solid #000;
+            -moz-border-left-colors:red blue yellow red blue
+            yellow red blue yellow;
+
+        }
+        .box6{width:300px;height:300px;margin: 10px;
+            border:5px solid #000;
+            background:url(imgs/201.jpg) no-repeat center,
+            url(imgs/bt_blue.png) repeat;
+            color:red; font-size: 40px;
+
+
+        }
+
+    </style>
+</head>
+<body  style="height: 2000px;">
+<div class="box1"></div>
+<div class="box2"></div>
+<div class="box3"></div>
+<div class="box4"></div>
+<div class="box5">边框色带：目前只在火狐下实现</div>
+
+<div class="box6">多背景效果</div>
+</body>
+</html>

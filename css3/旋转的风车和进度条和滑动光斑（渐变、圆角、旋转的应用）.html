@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+        /*/////////////////////旋转的风车/////////////////////////////*/
+        .box{ width: 400px; height: 400px; cursor: pointer;
+            margin: 100px; transition:3s linear;
+            -webkit-transition:3s linear;-moz-transition:3s linear;
+            -o-transition:3s linear;}
+        .box div{ width:190px; height:190px; margin: 5px;
+            border: 1px solid #000; float: left; box-sizing: border-box;}
+        .box div:nth-child(1){ border-radius:0 80%;
+            background: -webkit-linear-gradient(right bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -moz-linear-gradient(right bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -o-linear-gradient(right bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: linear-gradient(right bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+        }
+        .box div:nth-child(2){ border-radius:80% 0 ;
+            background: -webkit-linear-gradient(left bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -moz-linear-gradient(left bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -o-linear-gradient(left bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: linear-gradient(left bottom,red 0,
+            rebeccapurple 70%,indianred 100%);
+
+        }
+        .box div:nth-child(3){ border-radius:80% 0;
+            background: -webkit-linear-gradient(right top,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -moz-linear-gradient(right top,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -o-linear-gradient(right top,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: linear-gradient(right top,red 0,
+            rebeccapurple 70%,indianred 100%);
+        }
+        .box div:nth-child(4){ border-radius:0 80%;
+            background: -webkit-linear-gradient(left top,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -moz-linear-gradient(left top,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: -o-linear-gradient(left top,red 0,
+            rebeccapurple 70%,indianred 100%);
+            background: linear-gradient(left top,red 0,
+            rebeccapurple 70%,indianred 100%);
+        }
+        .box:hover{transform:rotate(360deg);
+            -webkit-transform:rotate(360deg);
+            -moz-transform:rotate(360deg);
+            -o-transform:rotate(360deg);}
+
+        /*/////////////////进度条/////////////////////////////////////////*/
+
+        .wrap{margin: 100px; width: 400px; height: 40px;
+            border: 1px solid #000000; border-radius:40px;
+            overflow:hidden; cursor: pointer;}
+        .wrap div{width:2000px; height: 40px;
+            background:
+                -webkit-repeating-linear-gradient(60deg,deepskyblue 0,
+                deepskyblue 10px,chartreuse 10px,chartreuse 20px);
+            background:
+                    repeating-linear-gradient(60deg,deepskyblue 0,
+                    deepskyblue 10px,chartreuse 10px,chartreuse 20px);
+            background:
+                    -moz-repeating-linear-gradient(30deg,deepskyblue 0,
+                    deepskyblue 10px,chartreuse 10px,chartreuse 20px);
+            background:
+                    -o-repeating-linear-gradient(60deg,deepskyblue 0,
+                    deepskyblue 10px,chartreuse 10px,chartreuse 20px);
+
+            margin-left: -50px; transition: 10s;-moz-transition: 10s;
+            -webkit-transition:10s;-o-transition: 10s;
+         }
+        .wrap:hover .box2{ margin-left: -900px;}
+
+        /*/////////////////百度光斑滑动效果//////////////////////////////////////*/
+        .wrap1{ margin: 100px;position: relative;}
+        .wrap1 a,.wrap1 span{display: block; width:300px;height:300px;}
+        .wrap1 a img{ width: 100%;}
+        .wrap1 span{position: absolute;left: 0;top:0;
+            background:-webkit-linear-gradient(-20deg,
+            rgba(255,255,255,0) 150px,rgba(255,255,255,0.8) 200px,
+            rgba(255,255,255,0) 250px) -300px 0 no-repeat;
+
+            transition:1s;}
+
+        .wrap1:hover .span{
+            background-position:300px 0}
+    </style>
+</head>
+<body style="height: 2000px;">
+
+<!--///////////旋转的风车///////////////////-->
+<div class="box">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<!--///////////进度条///////////////////-->
+<div class="wrap">
+    <div class="box2"></div>
+</div>
+
+<!--///////////百度光斑///////////////////-->
+
+<div class="wrap1">
+    <a href=""><img src="imgs/201.jpg" alt=""></a>
+    <span class="span"></span>
+</div>
+
+</body>
+</html>

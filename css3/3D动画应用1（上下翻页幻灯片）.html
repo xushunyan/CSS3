@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>上下翻页幻灯片效果</title>
+    <style>
+        ul{margin: 0;padding:0;}
+        li{list-style:none;}
+
+        @-webkit-keyframes toShow {
+            0%{
+                -webkit-transform: rotateX(180deg);
+                opacity: 0;
+            }
+            50%{
+                -webkit-transform: rotateX(-25deg);
+                opacity: 1;
+            }
+            60%{
+                -webkit-transform: rotateX(18deg);
+                opacity: 1;
+            }
+            70%{
+                -webkit-transform: rotateX(-12deg);
+                opacity: 1;
+            }
+            80%{
+                -webkit-transform: rotateX(8deg);
+                opacity: 1;
+            }
+            90%{
+                -webkit-transform: rotateX(-6deg);
+                opacity: 1;
+            }
+            100%{
+                -webkit-transform: rotateX(0deg);
+                opacity: 1;
+            }
+        }
+
+        @-webkit-keyframes toHide {
+            0%{
+                -webkit-transform: rotateX(0deg);
+                opacity: 1;
+            }
+            100%{
+                -webkit-transform: rotateX(-180deg);
+                opacity: 0;
+            }
+        }
+        #wrap{ width: 800px;height: 360px;margin: 100px auto 10px;
+            position: relative;-webkit-transform-style: preserve-3d;
+            -webkit-perspective: 800px;}
+        #wrap ul li{position: absolute;left: 0;top:0;
+            -webkit-transform-origin: bottom;}
+        #wrap ul li a{display: block;}
+        #wrap img{width: 800px;display: block;}
+        #wrap input{width: 70px;height: 70px;
+            position: absolute; border-radius: 50%;
+            top:50%; margin-top: -35px;outline: none;}
+        #wrap input:nth-of-type(1){left: -100px;}
+        #wrap input:nth-of-type(2){right: -100px;}
+
+        #wrap .active{
+            -webkit-transform: rotateX(0deg);
+            opacity: 1;
+            -webkit-animation:1s toShow;}
+        #wrap .unactive{
+            -webkit-transform: rotateX(180deg);
+            opacity: 0;
+            -webkit-animation:0.6s toHide;}
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrap">
+    <ul>
+        <li class="active"><a href="#"><img src="imgs/1.jpg" alt=""></a></li>
+        <li class="unactive"><a href="#"><img src="imgs/2.jpg" alt=""></a></li>
+        <li class="unactive"><a href="#"><img src="imgs/4.jpg" alt=""></a></li>
+        <li class="unactive"><a href="#"><img src="imgs/6.jpg" alt=""></a></li>
+    </ul>
+    <input type="button" value="上一张">
+    <input type="button" value="下一张">
+</div>
+<div style="width: 100%;height: 200px;background: #000;"></div>
+
+<script>
+    window.onload=function () {
+        var oWrap=document.getElementById('wrap');
+        var aLi=oWrap.getElementsByTagName('li');
+        var aInput=oWrap.getElementsByTagName('input');
+        var num=0
+
+        aInput[1].onclick=function () {
+            aLi[num].className='unactive';
+            num++;
+            if(num>=aLi.length){
+                num=0;
+            };
+            aLi[num].className='active';
+        }
+        aInput[0].onclick=function () {
+            aLi[num].className='unactive';
+            num--;
+            if(num<0){
+                num=aLi.length-1;
+            };
+            aLi[num].className='active';
+        }
+
+
+    }
+
+
+</script>
+
+</body>
+</html>

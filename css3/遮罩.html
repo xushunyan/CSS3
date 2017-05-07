@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+             width: 600px;
+            height: 600px;
+            background: url("imgs/201.jpg");
+            border: 10px solid #000000;
+            margin: 100px;
+            -webkit-mask:url("imgs/mask.png") no-repeat;
+            transition: 2s;
+        }
+        .box:hover{-webkit-mask-position:100% 100%;}
+    </style>
+</head>
+<body>
+<p>遮罩只在webkit内核浏览器下实现</p>
+<div class="box"></div>
+
+</body>
+</html>

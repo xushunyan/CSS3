@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box1{
+            width: 100px;
+            height: 100px;
+            background:red ;
+            transition:
+            2s width  cubic-bezier(0.080, -0.600,
+            1.000, 1.615), 3s background ;
+            margin: 20px;
+        }
+        .box1:hover{
+            width: 600px;
+            background:blue ;
+        }
+
+        .box2{
+            width: 100px;
+            height: 100px;
+            background:red ;
+            transition: all 500ms ease-in-out;
+            margin: 20px;
+        }
+        .box2:hover{
+            width: 600px;
+            background:blue ;
+        }
+
+        #box1{
+            width: 100px;
+            height: 100px;
+            background:red ;
+            transition: all 500ms ease-in-out;
+            margin: 20px;
+        }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background:red ;
+            transition: all 500ms ease-in-out;
+            margin: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box1"></div>
+<div class="box2"></div>
+<div id="box1"></div>
+<div id="box2"></div>
+<script>
+
+//////////////////////js写法，问题1，展示//////////////////////
+
+    var oBox1=document.getElementById('box1');
+    oBox1.onclick=function(){
+        this.style.width=this.offsetWidth+400+"px";
+        this.style.backgroundColor='blue';
+    };
+
+    addEnd(oBox1,function(){
+        alert('end')
+    });
+    function addEnd(obj,fn) {
+        obj.addEventListener('WebkitTransitionEnd',fn,false);
+        obj.addEventListener('transitionend',fn,false);
+    };
+
+//////////////////////js写法，问题1，展示//////////////////////
+
+    var oBox2=document.getElementById('box2');
+    oBox2.onclick=function(){
+        this.style.width=this.offsetWidth+200+"px";
+        addEnd(oBox2,end)
+    };
+
+
+    function end(){
+
+        this.style.width=this.offsetWidth+100+"px";
+        removeEnd(this,end);
+    };
+
+    function addEnd(obj,fn) {
+        obj.addEventListener('WebkitTransitionEnd',fn,false);
+        obj.addEventListener('transitionend',fn,false);
+    }
+    function removeEnd(obj,fn) {
+        obj.removeEventListener('WebkitTransitionEnd',fn,false);
+        obj.removeEventListener('transitionend',fn,false);
+    }
+</script>
+</body>
+</html>

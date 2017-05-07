@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动画</title>
+    <style>
+        div{color:#ffffff;}
+        @keyframes move {
+            50%{
+                width:1000px;
+            }
+        }
+        @-webkit-keyframes move {
+            50%{
+                width:1000px;
+            }
+        }
+        @-moz-keyframes move {
+             50%{
+                 width:1000px;
+             }
+         }
+        .box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 100px;
+            animation:4s  move;
+            -moz-animation:4s  move;
+            -webkit-animation:4s  move;
+        }
+        .box2{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 100px;
+            animation:4s  move  3 linear;
+            -moz-animation:4s  move  3 linear;
+            -webkit-animation:4s  move 3 linear;
+        }
+
+/*//////////////////////////////////////////////////////////*/
+        @keyframes tomove {
+            0%{  left:0;top:0px;  }
+            25%{ left:300px;top:0px; }
+            50%{  left:300px;top:300px;  }
+            75%{  left:0;top:300px;  }
+            100%{ left:0;top:0px;  }
+        }
+        .wrap{ width:400px;height:400px;border: 5px solid #000;
+            float: left;position: relative;
+            margin:50px;}
+
+        .box3{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;left: 0;
+            top: 0;
+            animation: 4s tomove infinite linear;
+            -webkit-animation: 4s tomove infinite linear;
+            -moz-animation: 4s tomove infinite linear;
+        }
+        .box4{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: absolute;left: 0;
+            top: 0;
+            animation: 4s tomove infinite linear alternate;
+            -webkit-animation: 4s tomove infinite linear alternate;
+            -moz-animation: 4s tomove infinite linear alternate;
+        }
+        
+        
+/*//////////////////////////////////////////////////////////*/
+        @keyframes tocolor {
+            to{  background: #000;  }
+        }
+        @-webkit-keyframes tocolor {
+            to{  background: #000;  }
+        }
+        @-moz-keyframes tocolor {
+            to{  background: #000;  }
+        }
+
+        #box5{
+            width: 100px;
+            height: 50px;
+            background: blue;
+            margin: 100px;
+            font: 20px/50px '微软雅黑';
+            text-align: center;
+            cursor: pointer;
+            border-radius: 6px;
+
+        }
+
+        .tochange{
+            animation: tocolor 1s ;
+            -webkit-animation: tocolor 1s ;
+            -moz-animation: tocolor 1s ;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="box1">只执行一次</div>
+<div class="box2">设定执行次数，执行3次;匀速运动：linear</div>
+
+<div id="box5">点击按钮</div>
+
+<div class="wrap">
+    <div class="box3"></div>
+</div>
+
+<div class="wrap">
+    <div class="box4">添加播放重置：alternate</div>
+</div>
+
+<script>
+    document.getElementById('box5').onclick=function(){
+        this.className='tochange';
+        addEnd(this,an);
+    }
+
+    function an() {
+        alert('已选择')
+    }
+
+    function addEnd(obj,fn)
+    {
+        obj.addEventListener('webkitAnimationEnd',fn, false);
+        obj.addEventListener('animationend',fn, false);
+    }
+</script>
+
+</body>
+</html>

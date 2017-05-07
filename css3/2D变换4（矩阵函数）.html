@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            border:2px solid #000;
+            margin: 100px auto;
+            transition: 1s;
+        }
+        #box1:hover{
+            -webkit-transform:matrix(1,0,0,1,100,0);
+        }
+
+        /*
+	matrix(1,0,0,1,0,0)
+	matrix(a,b,c,d,e,f);
+	progid:DXImageTransform.Microsoft.Matrix( M11= 1, M12= 0, M21= 0 , M22=1,SizingMethod='auto expand');
+	Matrix( M11= a, M12= c, M21= b , M22=d,SizingMethod='auto expand');
+	位移:
+	x:e+disX
+	y:f+disY
+
+	缩放:
+	x轴缩放 a=x*a   c=x*c;
+    y轴缩放 b=y*b   d=y*d;
+
+	x轴斜切: c=Math.tan(xDeg/180*Math.PI)
+	y轴斜切: b=Math.tan(yDeg/180*Math.PI)
+
+
+	a=Math.cos(deg/180*Math.PI);
+	b=Math.sin(deg/180*Math.PI);
+	c=-Math.sin(deg/180*Math.PI);
+	d=Math.cos(deg/180*Math.PI);
+
+
+*/      .box{
+            margin: 100px auto;
+            width: 100px;
+            height: 100px;
+            border:2px solid #000;
+            position: relative;
+            }
+        #box2{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position:absolute;left:0;top:0;
+        }
+    </style>
+</head>
+<body>
+<div id="box1"></div>
+<div class="box">
+    <div id="box2"></div>
+</div>
+<script>
+window.onload=function () {
+    var oBox=document.getElementById('box2');
+    var iDeg=0;
+    setInterval(function () {
+        iDeg++;
+        toRotate(oBox,iDeg);
+    },30)
+
+    function toRotate(obj,iDeg) {
+
+        var a=Math.round(Math.cos(iDeg/180*Math.PI)*100)/100;
+//////////////////////四舍五入保留两位小数的方法：先成100向上取整，再除100
+        var b=Math.round(Math.sin(iDeg/180*Math.PI)*100)/100;
+        var c=-b;
+        var d=a;
+        obj.style.WebkitTransform="matrix("+a+","+b+","+c+","+d+",0,0)";
+        obj.style.MozTransform="matrix("+a+","+b+","+c+","+d+",0,0)";
+        obj.style.transform="matrix("+a+","+b+","+c+","+d+",0,0)";
+        obj.style.filter="progid:DXImageTransform.Microsoft.Matrix( M11="+a+", M12= "+c+", M21= "+b+" , M22="+d+",SizingMethod='auto expand')";
+
+/////////////////////////////兼容IE中旋转基点不停变换的方法：//////////////////////////////////////
+        obj.style.left=(obj.parentNode.offsetWidth-obj.offsetWidth-2)/2+"px";
+        obj.style.top=(obj.parentNode.offsetHeight-obj.offsetHeight-2)/2+"px";
+    }
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{background: #000000;}
+        #h1{color:rgba(255,255,255,0.3); margin: 100px;
+            font:bold 120px/120px  '微软雅黑';
+          background:linear-gradient(-30deg,rgba(255,255,255,0) 330px,
+          rgba(255,255,255,1) 400px,rgba(255,255,255,0) 470px) -550px 0 no-repeat ;
+            background:-webkit-linear-gradient(-30deg,rgba(255,255,255,0) 330px,
+            rgba(255,255,255,1) 400px,rgba(255,255,255,0) 470px) -550px 0 no-repeat ;
+            background:-moz-linear-gradient(-30deg,rgba(255,255,255,0) 330px,
+            rgba(255,255,255,1) 400px,rgba(255,255,255,0) 470px) -550px 0 no-repeat ;
+            background:-o-linear-gradient(-30deg,rgba(255,255,255,0) 330px,
+            rgba(255,255,255,1) 400px,rgba(255,255,255,0) 470px) -550px 0 no-repeat ;
+            -webkit-background-clip:text;
+        }
+    </style>
+</head>
+<body>
+<h1 id="h1">iPhone开机动画</h1>
+<script>
+    var oH1=document.getElementById('h1');
+    var oTimer=null;
+    var iLeft=-550;
+    document.title='iPhone开机动画';
+    function toMove(){
+        oTimer=setInterval(function(){
+            iLeft+=10;
+            if(iLeft==630){
+                iLeft=-550;
+                clearInterval(oTimer);
+            }
+            oH1.style.backgroundPosition=iLeft+"px 0px";
+        },30)
+    };
+    toMove();
+    setInterval(function () {
+        toMove();
+    },10000)
+
+</script>
+</body>
+</html>

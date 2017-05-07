@@ -1,0 +1,13 @@
+.wrap{ s
+    border:1px solid #000;
+    font:14px/28px "宋体";color:#000;
+    text-indent:2em;
+    -webkit-column-count:2;
+    -webkit-column-gap:20px;
+    -webkit-column-rule:1px solid #000;}
+
+
+body ul{ margin: 0; padding: 0;}
+ul{ width: 100%; }
+li{ list-style:none; width: 50%; height: 200px; background: red; float: left;
+    color: #ffffff; font-size:100px;}

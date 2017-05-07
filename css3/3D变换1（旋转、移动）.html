@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width: 150px;color: white;
+            float: left;
+            height: 200px;
+            border: 2px solid #000;
+            padding: 30px;
+            margin: 100px;
+            -webkit-transform-style:preserve-3d;
+            -webkit-perspective:200px;
+        }
+        .div1{
+            width: 150px;
+            height: 200px;
+            background: red;
+            transition: 1s;
+        }
+
+        .box1:hover .div1{
+            -webkit-transform: rotateX(360deg);
+        }
+
+/*////////////////////////////////////////////////////////*/
+
+        .box2{
+            width: 150px;color: white;float: left;
+            height: 200px;
+            border: 2px solid #000;
+            padding: 30px;
+            margin: 100px;
+            -webkit-transform-style:preserve-3d;
+            -webkit-perspective:200px;
+
+        }
+        .div2{
+            width: 150px;
+            height: 200px;
+            background: red;
+            transition: 1s;
+        }
+
+        .box2:hover .div2{
+            -webkit-transform: rotateY(-180deg);
+            -webkit-transform-origin:left;
+        }
+
+/*////////////////////////////////////////////////////////*/
+        .box3{
+            width: 100px;color: white;float: left;
+            height: 100px;
+            border: 2px solid #000;
+            padding: 50px;
+            margin: 100px;
+            -webkit-transform-style:preserve-3d;
+            -webkit-perspective:200px;
+        }
+        .div3{
+            width: 100px;
+            height:100px;
+            background: red;
+            transition: 1s;
+        }
+
+        .box3:hover .div3{
+            -webkit-transform: rotateZ(180deg);
+        }
+/*////////////////////////////////////////////////////////*/
+        .box4{
+            width: 100px;color: white;float: left;
+            height: 100px;
+            border: 2px solid #000;
+            padding: 50px;
+            margin: 100px;
+            -webkit-transform-style:preserve-3d;
+            -webkit-perspective:300px;
+        }
+        .div4{
+            width: 100px;
+            height:100px;
+            background: red;
+            transition: 1s;
+        }
+
+        .box4:hover .div4{
+            -webkit-transform:translateZ(100px);
+        }
+
+/*////////////////////////////////////////////////////////*/
+
+
+    </style>
+</head>
+<body>
+
+<div class="box1">
+    <div class="div1">111沿X轴上下翻转</div>
+</div>
+
+<div class="box2">
+    <div class="div2">222沿Y轴左右翻转</div>
+</div>
+
+<div class="box3">
+    <div class="div3">333沿Z轴左右翻转</div>
+</div>
+
+<div class="box4">
+    <div class="div4">444沿Z轴移动100px（站在300px景深位置）</div>
+</div>
+
+</body>
+</html>
